@@ -6,6 +6,7 @@
 
 ![](public/assets/images/1.png)
 
+![](public/assets/images/2.png)
 
 ## Integrantes:
 
