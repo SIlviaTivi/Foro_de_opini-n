@@ -42,6 +42,82 @@ $myInput.focus();
 
 
              });
-/*.....*/
+
+          /*crear input de mensaje respuesta*/
+          var $btnResponse = $(".btn-response");
+          var $msnResponse = $(".msn-response");
+          $msnResponse.hide();
+        $btnResponse.on("click", function() {
+          console.log(this);
+          console.log($('p').data('target'));
+          if (this) {
+            var id = $('.id').data('target') ;
+
+            localStorage.setItem('idUser', id);
+        /*     window.location.href = 'verTopic.html';*/
+          console.log(id);
+          }
+
+      /*    $(this)
+          .append(`
+              <p>Nombre: <input class="by" type="text" name="" value=""></p>
+              <p>Mensaje: <input class="msn-input" type="text" name="" value=""></p>
+              <button class="send">Enviar</button>
+            `);*/
+
+          $msnResponse.toggle();
+
+            var $idPost = $(".id-post");
+            $(".send").on("click", function() {
+            /*  console.log($idPost)*/
+              var $by = $('.by').val();
+              var $msnInput = $('.msn-input').val();
+              console.log($by);
+            });
+
+
+
+          });
+        },
+            type: 'GET'
+
+     });
+    /*metodo post para crear respuestas*/
+     $btnpost.on('click', function(){
+
+        var response = {
+            author_name: $name.val(),
+            content: $topic.val()
+
+        }
+
+    /*    $.ajax({
+            url: `http://examen-laboratoria-sprint-5.herokuapp.com/topics/${topicId}/responses`,
+            data: response,
+            success: function(responsePost) {
+                console.log(response);
+            },
+            type: 'POST'
+         });*/
+
+       })  /* fin metodo post para crear respuestas*/
+     /*metodo post para crear temas*/
+     $btnpost.on('click', function(){
+        var order = {
+            author_name: $name.val(),
+            content: $topic.val()
+        }
+
+        $.ajax({
+            url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics',
+            data: order,
+            success: function(responsePost) {
+                console.log(responsePost);
+            },
+            type: 'POST'
+         });
+
+     }); /* fin metodo post para crear temas*/
+
 
 });
