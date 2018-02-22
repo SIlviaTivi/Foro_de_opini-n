@@ -29,7 +29,7 @@ $.ajax({
         $.each(response, function( index, obj ) {
             $content.append(`
                   
-                  <div class="filter "><img class='img-user inline-block' src="assets/images/user.png" alt=""><h4 class='theme inline-block'>Tema: ${response[index].content}</h4>
+                  <div class="filter "><img class='img-user inline-block' src="assets/images/foro-color.jpg" alt=""><h4 class='theme inline-block'>Tema: ${response[index].content}</h4>
                     <p>Usuario: ${response[index].author_name}</p>
                     <p>Respuesta: ${response[index].responses_count}<a href="#" class='btn-response'> <u>Responder</u></a></p><div>
                 `);
